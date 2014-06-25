@@ -13,6 +13,11 @@
 	</div>
 	<div class="omega eight columns">
 		<div data-hook="title" class="field">
+			<%= f.label t(:language) %><br>
+			<%= f.text_field :language, :class => 'fullwidth' %>
+		</div>
+
+		<div data-hook="title" class="field">
 			<%= f.label t(:title) %><br>
 			<%= f.text_field :title, :class => 'fullwidth' %>
 		</div>

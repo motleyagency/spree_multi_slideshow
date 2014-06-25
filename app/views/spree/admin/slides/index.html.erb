@@ -22,6 +22,7 @@
     </colgroup>
     <thead>
       <tr data-hook="slides_header">
+        <th><%= t(:language) %></th>
         <th colspan="2"><%= t(:thumbnail) %></th>
         <th><%= t(:alt_text) %></th>
 		<th><%= t(:enabled) %></th>
@@ -35,6 +36,7 @@
           <td class="no-border">
             <span class="handle"></span>
           </td>
+          <td><%= slide.language %></td>
           <td>
             <%= link_to image_tag(slide.attachment.url(:mini)), slide.attachment.url(:large) %>
           </td>

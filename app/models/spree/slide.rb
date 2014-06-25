@@ -21,22 +21,22 @@ module Spree
     default_scope order("position ASC")
     scope :enable, {:conditions => {:enabled => true}}
 
-    include Spree::Core::S3Support
-    supports_s3 :attachment
+    # include Spree::Core::S3Support
+    # supports_s3 :attachment
 
-    Spree::Slide.attachment_definitions[:attachment][:styles] = ActiveSupport::JSON.decode(Spree::Config[:slide_styles]).symbolize_keys!
-    Spree::Slide.attachment_definitions[:attachment][:path] = Spree::Config[:slide_path]
-    Spree::Slide.attachment_definitions[:attachment][:url] = Spree::Config[:slide_url]
-    Spree::Slide.attachment_definitions[:attachment][:default_url] = Spree::Config[:slide_default_url]
-    Spree::Slide.attachment_definitions[:attachment][:default_style] = Spree::Config[:slide_default_style]
+    # Spree::Slide.attachment_definitions[:attachment][:styles] = ActiveSupport::JSON.decode(Spree::Config[:slide_styles]).symbolize_keys!
+    # Spree::Slide.attachment_definitions[:attachment][:path] = Spree::Config[:slide_path]
+    # Spree::Slide.attachment_definitions[:attachment][:url] = Spree::Config[:slide_url]
+    # Spree::Slide.attachment_definitions[:attachment][:default_url] = Spree::Config[:slide_default_url]
+    # Spree::Slide.attachment_definitions[:attachment][:default_style] = Spree::Config[:slide_default_style]
     
     def find_dimensions
       temporary = attachment.queued_for_write[:original]
       filename = temporary.path unless temporary.nil?
       filename = attachment.path if filename.blank?
       geometry = Paperclip::Geometry.from_file(filename)
-      self.attachment_width = geometry.width
-      self.attachment_height = geometry.height
+      # self.attachment_width = geometry.width
+      # self.attachment_height = geometry.height
     end
 
     # if there are errors from the plugin, then add a more meaningful message
