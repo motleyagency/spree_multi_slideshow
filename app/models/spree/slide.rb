@@ -12,7 +12,7 @@ module Spree
     has_attached_file :attachment,
             :url  => "/spree/slides/:id/:style_:basename.:extension",
             :path => ":rails_root/public/spree/slides/:id/:style_:basename.:extension",
-            :styles => { :mini => "60x60#", :small =>  "300x100#", :medium => "600x200#", :large =>  "900x300#"},
+            :styles => { :mini => "60x60#", :small =>  "300x100#", :medium => "640x480#", :large =>  "900x300#", :default => "640x480>"},
             convert_options: { all: '-strip -auto-orient -colorspace sRGB' }
     # save the w,h of the original image (from which others can be calculated)
     # we need to look at the write-queue for images which have not been saved yet
