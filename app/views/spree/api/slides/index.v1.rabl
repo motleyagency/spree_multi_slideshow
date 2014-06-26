@@ -1,7 +1,7 @@
 object false
 
 child @slides => :slides do
-  attributes :id, :title, :presentation, :attachment_file_name, :position
+  attributes :id, :title, :presentation, :attachment_file_name, :position, :url
   node(:image_url_original) { |s| s.attachment.url }
   node(:image_url_mini) { |s| s.attachment.url(:mini) }
   node(:image_url_small) { |s| s.attachment.url(:small) }
