@@ -1,7 +1,7 @@
-Deface::Override.new(:virtual_path => "spree/layouts/admin",
-                      :name => "slideshow_admin_tab",
-                      :insert_bottom => "[data-hook='admin_tabs']",
-                      :text => "<%= tab(:slideshows, :icon => 'icon-picture') %>")
+#Deface::Override.new(:virtual_path => "spree/layouts/admin",
+#                      :name => "slideshow_admin_tab",
+#                      :insert_bottom => "[data-hook='admin_tabs']",
+#                      :text => "<%= tab(:slideshows, :icon => 'icon-picture') %>")
 
 Deface::Override.new(:virtual_path => "spree/admin/shared/_configuration_menu",
                       :name => "add_slide_settings",
